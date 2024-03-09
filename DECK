@@ -1,0 +1,46 @@
+//DECK
+import java.util.*;
+class Deck{
+    ArrayList<Card> cards=new ArrayList<Card>();
+    
+    public void createDeck(){
+    String[] values={"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
+    String[] suit={"Spades","Diamonds","Clubs","Hearts"};
+    
+    for(String s:suit){
+        for(String v:values){
+            cards.add(new Card(s,v));
+        }
+    }
+    }
+    public void shuffleDeck(){
+        Collections.shuffle(cards);
+    }
+    
+    public void printDeck(){
+        for(Card card:cards){
+            System.out.println(card);
+        }
+    }
+    //same suit():if cards belong to same suit
+    //comparecard():if card have same values
+    //dealCard:random deal 5 cards
+    //findCard():Enter Suit and value if match return index
+    //identifyCard():Select random card,tell if its face or number card
+    public static void main(String[] args) {
+    System.out.println(select(5));
+}
+
+public static Card[] select(int k)
+{
+    Random rand = new Random(52);
+    Deck deck = new Deck(52);
+    Card[] hand = new Card[5];
+    for (int j = 0; j < 5; j += 1)
+    {
+        int index = rand.nextInt(52-j);
+        hand[j] = deck[index];
+    }
+    return hand;
+    
+}
