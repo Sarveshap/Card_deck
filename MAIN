@@ -1,0 +1,10 @@
+//MAIN
+class Main{
+public static void main(String[] args){
+    Deck deck=new Deck();
+    deck.createDeck();
+    deck.printDeck();
+    deck.shuffleDeck();
+    deck.printDeck();
+}
+}
